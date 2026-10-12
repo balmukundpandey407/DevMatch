@@ -1,44 +1,89 @@
-# DevMatch
+<div align="center">
 
+# DevMatch
 ### Great ideas need the right team.
 
-DevMatch helps BIT Sindri students find projects that fit their skills—and helps project leads find the teammates they need.
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Python 3.10+](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)](https://syncbuild.tech)
+
+**DevMatch** is a skill-based team-matching platform built for BIT Sindri. It bridges the gap between campus builders by dynamically scoring compatibility between student skill sets and open project roles across branches and batches.
+
+[🌐 Live Deployment](https://syncbuild.tech) · [📑 API Docs](https://syncbuild.tech/docs) · [🐞 Report Bug](https://github.com/balmukundpandey407/DevMatch/issues)
+
+</div>
+
+---
 
 ## Why DevMatch?
 
-- **Skill-based project matches** — See a match score, shared skills, and the role that fits you best.
-- **Find teammates for open roles** — Project leads get ranked student suggestions for each role.
-- **Discover projects quickly** — Browse, search, and filter by skills or availability.
-- **Build a team across campus** — Connect with students from different branches and years.
-- **Turn an idea into a listing** — Post a project, define roles, and manage your team needs.
-- **See the project behind the pitch** — Review details and follow contact or GitHub links.
+* **Skill-Based Matching Engine:** Computes dynamic match scores, highlighting shared tech stacks and ideal role fits.
+* **Role-First Recruitment:** Project leads get ranked student recommendations tailored to each open position.
+* **Smart Discovery & Filtering:** Search and filter active projects across branches by tags, domain, and availability.
+* **Interdisciplinary Collaboration:** Seamlessly connect developers, designers, and domain leads across departments.
+* **Interactive API Documentation:** Native Swagger UI interactive documentation to test and inspect endpoints.
 
-## Quick demo
+---
 
-1. Sign up and add a few skills.
-2. Browse the feed and notice how matches are ranked.
-3. Open a project to see why it matches and which roles are open.
-4. Post a project with roles to see how a lead can recruit teammates.
+## System Architecture & Tech Stack
 
-## Run locally
+```
+┌─────────────────┐       JSON / REST       ┌──────────────────────┐
+│  Client UI      │ ◄─────────────────────► │  FastAPI Backend     │
+│  (Vanilla JS)   │                         │  (Asynchronous Core) │
+└─────────────────┘                         └──────────┬───────────┘
+                                                       │
+                                              Async Engine / ORM
+                                                       │
+                                            ┌──────────▼───────────┐
+                                            │ Neon PostgreSQL DB   │
+                                            │ (Relational Schemas) │
+                                            └──────────────────────┘
+```
 
-1. Set up PostgreSQL using the schema in [SPEC.md](./SPEC.md).
-2. Create `.env` in the project folder:
+* **Core Engine & APIs:** Python, FastAPI (Asynchronous routes, Pydantic data validation)
+* **Database & Storage:** PostgreSQL (Hosted on NeonDB with normalized relational schemas)
+* **API Documentation:** Swagger UI & ReDoc (`/docs` & `/redoc`)
+* **Deployment:** Production server hosted at `syncbuild.tech`
 
-   ```env
-   DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DATABASE
-   SECRET_KEY=use-a-long-random-secret
-   ```
+---
 
-3. Install and run:
+## Quick Start (Local Setup)
 
-   ```sh
-   pip install -r requirements.txt
-   uvicorn app.main:app --reload
-   ```
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/balmukundpandey407/DevMatch.git](https://github.com/balmukundpandey407/DevMatch.git)
+cd DevMatch
+```
 
-4. Open http://127.0.0.1:8000. API docs: http://127.0.0.1:8000/docs.
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory:
+```bash
+DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DATABASE
+SECRET_KEY=your_secure_random_secret_key
+```
 
-**Built with:** FastAPI · PostgreSQL · Vanilla JavaScript
+### 3. Install Dependencies & Run
+```bash
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-Keep `.env` private. Never commit passwords, tokens, or database credentials.
+* **Local Application:** `http://127.0.0.1:8000`
+* **Interactive API Docs:** `http://127.0.0.1:8000/docs`
+
+---
+
+## 👥 Team SYNCTHINK
+
+Built during **Hacktoberfest Hack Day (BIT Sindri)**:
+
+* **Balmukund Pandey** — *Backend Architecture, Database Schemas & REST APIs*
+* **Pranjal Aman** — *Frontend UI & Client-Side Integration*
+
+---
+
+## Author
+   
+   BALMUKUND PANDEY
