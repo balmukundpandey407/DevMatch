@@ -10,7 +10,7 @@
 
 **DevMatch** is a skill-based team-matching platform built for BIT Sindri. It bridges the gap between campus builders by dynamically scoring compatibility between student skill sets and open project roles across branches and batches.
 
-[🌐 Live Deployment](https://devmatch-f1it.onrender.com/) · [📑 API Docs](https://syncbuild.tech/docs) · [🐞 Report Bug](https://github.com/balmukundpandey407/DevMatch/issues)
+[🌐 Live Deployment](https://devmatch-f1it.onrender.com/) · [📑 API Docs](https://devmatch-f1it.onrender.com/docs) · [🐞 Report Bug](https://github.com/balmukundpandey407/DevMatch/issues)
 
 </div>
 
